@@ -29,162 +29,170 @@ namespace AlarmClockApp
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.TabClock = new System.Windows.Forms.TabControl();
-            this.TapSetAlarm = new System.Windows.Forms.TabPage();
-            this.TapDigitalClock = new System.Windows.Forms.TabPage();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
+            this.TabSetAlarm = new System.Windows.Forms.TabPage();
+            this.btnClearAlarm = new System.Windows.Forms.Button();
+            this.btnSetAlarm = new System.Windows.Forms.Button();
+            this.dtpTimePicker = new System.Windows.Forms.DateTimePicker();
+            this.dtpDatePicker = new System.Windows.Forms.DateTimePicker();
+            this.lblTime2 = new System.Windows.Forms.Label();
+            this.lblDate2 = new System.Windows.Forms.Label();
+            this.TabDigitalClock = new System.Windows.Forms.TabPage();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
+            this.lblTime = new System.Windows.Forms.Label();
+            this.lblDate = new System.Windows.Forms.Label();
+            this.lblAlarmSet = new System.Windows.Forms.Label();
+            this.lblAlarm = new System.Windows.Forms.Label();
+            this.myTimer = new System.Windows.Forms.Timer(this.components);
             this.TabClock.SuspendLayout();
-            this.TapSetAlarm.SuspendLayout();
-            this.TapDigitalClock.SuspendLayout();
+            this.TabSetAlarm.SuspendLayout();
+            this.TabDigitalClock.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // TabClock
             // 
-            this.TabClock.Controls.Add(this.TapSetAlarm);
-            this.TabClock.Controls.Add(this.TapDigitalClock);
+            this.TabClock.Controls.Add(this.TabSetAlarm);
+            this.TabClock.Controls.Add(this.TabDigitalClock);
             this.TabClock.Location = new System.Drawing.Point(12, 12);
             this.TabClock.Name = "TabClock";
             this.TabClock.SelectedIndex = 0;
             this.TabClock.Size = new System.Drawing.Size(439, 267);
             this.TabClock.TabIndex = 0;
             // 
-            // TapSetAlarm
+            // TabSetAlarm
             // 
-            this.TapSetAlarm.Controls.Add(this.button2);
-            this.TapSetAlarm.Controls.Add(this.button1);
-            this.TapSetAlarm.Controls.Add(this.dateTimePicker2);
-            this.TapSetAlarm.Controls.Add(this.dateTimePicker1);
-            this.TapSetAlarm.Controls.Add(this.label2);
-            this.TapSetAlarm.Controls.Add(this.label1);
-            this.TapSetAlarm.Location = new System.Drawing.Point(4, 22);
-            this.TapSetAlarm.Name = "TapSetAlarm";
-            this.TapSetAlarm.Padding = new System.Windows.Forms.Padding(3);
-            this.TapSetAlarm.Size = new System.Drawing.Size(431, 241);
-            this.TapSetAlarm.TabIndex = 0;
-            this.TapSetAlarm.Text = "알람설정";
-            this.TapSetAlarm.UseVisualStyleBackColor = true;
+            this.TabSetAlarm.Controls.Add(this.btnClearAlarm);
+            this.TabSetAlarm.Controls.Add(this.btnSetAlarm);
+            this.TabSetAlarm.Controls.Add(this.dtpTimePicker);
+            this.TabSetAlarm.Controls.Add(this.dtpDatePicker);
+            this.TabSetAlarm.Controls.Add(this.lblTime2);
+            this.TabSetAlarm.Controls.Add(this.lblDate2);
+            this.TabSetAlarm.Location = new System.Drawing.Point(4, 22);
+            this.TabSetAlarm.Name = "TabSetAlarm";
+            this.TabSetAlarm.Padding = new System.Windows.Forms.Padding(3);
+            this.TabSetAlarm.Size = new System.Drawing.Size(431, 241);
+            this.TabSetAlarm.TabIndex = 0;
+            this.TabSetAlarm.Text = "알람설정";
+            this.TabSetAlarm.UseVisualStyleBackColor = true;
             // 
-            // TapDigitalClock
+            // btnClearAlarm
             // 
-            this.TapDigitalClock.Controls.Add(this.groupBox1);
-            this.TapDigitalClock.Controls.Add(this.label4);
-            this.TapDigitalClock.Controls.Add(this.label3);
-            this.TapDigitalClock.Location = new System.Drawing.Point(4, 22);
-            this.TapDigitalClock.Name = "TapDigitalClock";
-            this.TapDigitalClock.Padding = new System.Windows.Forms.Padding(3);
-            this.TapDigitalClock.Size = new System.Drawing.Size(431, 241);
-            this.TapDigitalClock.TabIndex = 1;
-            this.TapDigitalClock.Text = "디지털시계";
-            this.TapDigitalClock.UseVisualStyleBackColor = true;
+            this.btnClearAlarm.Location = new System.Drawing.Point(335, 203);
+            this.btnClearAlarm.Name = "btnClearAlarm";
+            this.btnClearAlarm.Size = new System.Drawing.Size(90, 32);
+            this.btnClearAlarm.TabIndex = 5;
+            this.btnClearAlarm.Text = "해제";
+            this.btnClearAlarm.UseVisualStyleBackColor = true;
+            this.btnClearAlarm.Click += new System.EventHandler(this.BtnClearAlarm_Click);
             // 
-            // label1
+            // btnSetAlarm
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(20, 19);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(38, 12);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "label1";
+            this.btnSetAlarm.Location = new System.Drawing.Point(238, 203);
+            this.btnSetAlarm.Name = "btnSetAlarm";
+            this.btnSetAlarm.Size = new System.Drawing.Size(90, 32);
+            this.btnSetAlarm.TabIndex = 4;
+            this.btnSetAlarm.Text = "설정";
+            this.btnSetAlarm.UseVisualStyleBackColor = true;
+            this.btnSetAlarm.Click += new System.EventHandler(this.BtnSetAlarm_Click);
             // 
-            // label2
+            // dtpTimePicker
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(20, 86);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(38, 12);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "label2";
+            this.dtpTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Time;
+            this.dtpTimePicker.Location = new System.Drawing.Point(22, 101);
+            this.dtpTimePicker.Name = "dtpTimePicker";
+            this.dtpTimePicker.ShowUpDown = true;
+            this.dtpTimePicker.Size = new System.Drawing.Size(200, 21);
+            this.dtpTimePicker.TabIndex = 3;
             // 
-            // dateTimePicker1
+            // dtpDatePicker
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(22, 34);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 21);
-            this.dateTimePicker1.TabIndex = 2;
+            this.dtpDatePicker.Location = new System.Drawing.Point(22, 34);
+            this.dtpDatePicker.Name = "dtpDatePicker";
+            this.dtpDatePicker.Size = new System.Drawing.Size(200, 21);
+            this.dtpDatePicker.TabIndex = 2;
             // 
-            // dateTimePicker2
+            // lblTime2
             // 
-            this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dateTimePicker2.Location = new System.Drawing.Point(22, 101);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(200, 21);
-            this.dateTimePicker2.TabIndex = 3;
+            this.lblTime2.AutoSize = true;
+            this.lblTime2.Location = new System.Drawing.Point(20, 86);
+            this.lblTime2.Name = "lblTime2";
+            this.lblTime2.Size = new System.Drawing.Size(57, 12);
+            this.lblTime2.TabIndex = 1;
+            this.lblTime2.Text = "시간 설정";
             // 
-            // button1
+            // lblDate2
             // 
-            this.button1.Location = new System.Drawing.Point(238, 203);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(90, 32);
-            this.button1.TabIndex = 4;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
+            this.lblDate2.AutoSize = true;
+            this.lblDate2.Location = new System.Drawing.Point(20, 19);
+            this.lblDate2.Name = "lblDate2";
+            this.lblDate2.Size = new System.Drawing.Size(57, 12);
+            this.lblDate2.TabIndex = 0;
+            this.lblDate2.Text = "날짜 설정";
             // 
-            // button2
+            // TabDigitalClock
             // 
-            this.button2.Location = new System.Drawing.Point(335, 203);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(90, 32);
-            this.button2.TabIndex = 5;
-            this.button2.Text = "button2";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(31, 28);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(38, 12);
-            this.label3.TabIndex = 0;
-            this.label3.Text = "label3";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(31, 55);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(38, 12);
-            this.label4.TabIndex = 1;
-            this.label4.Text = "label4";
+            this.TabDigitalClock.Controls.Add(this.groupBox1);
+            this.TabDigitalClock.Controls.Add(this.lblAlarmSet);
+            this.TabDigitalClock.Controls.Add(this.lblAlarm);
+            this.TabDigitalClock.Location = new System.Drawing.Point(4, 22);
+            this.TabDigitalClock.Name = "TabDigitalClock";
+            this.TabDigitalClock.Padding = new System.Windows.Forms.Padding(3);
+            this.TabDigitalClock.Size = new System.Drawing.Size(431, 241);
+            this.TabDigitalClock.TabIndex = 1;
+            this.TabDigitalClock.Text = "디지털시계";
+            this.TabDigitalClock.UseVisualStyleBackColor = true;
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.label6);
-            this.groupBox1.Controls.Add(this.label5);
+            this.groupBox1.Controls.Add(this.lblTime);
+            this.groupBox1.Controls.Add(this.lblDate);
             this.groupBox1.Location = new System.Drawing.Point(24, 80);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(381, 150);
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "groupBox1";
+            this.groupBox1.Text = "현재 시간";
             // 
-            // label5
+            // lblTime
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(20, 34);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(38, 12);
-            this.label5.TabIndex = 2;
-            this.label5.Text = "label5";
+            this.lblTime.AutoSize = true;
+            this.lblTime.Font = new System.Drawing.Font("나눔고딕코딩", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.lblTime.Location = new System.Drawing.Point(20, 63);
+            this.lblTime.Name = "lblTime";
+            this.lblTime.Size = new System.Drawing.Size(0, 32);
+            this.lblTime.TabIndex = 3;
             // 
-            // label6
+            // lblDate
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(20, 63);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(38, 12);
-            this.label6.TabIndex = 3;
-            this.label6.Text = "label6";
+            this.lblDate.AutoSize = true;
+            this.lblDate.Location = new System.Drawing.Point(20, 34);
+            this.lblDate.Name = "lblDate";
+            this.lblDate.Size = new System.Drawing.Size(0, 12);
+            this.lblDate.TabIndex = 2;
+            // 
+            // lblAlarmSet
+            // 
+            this.lblAlarmSet.AutoSize = true;
+            this.lblAlarmSet.Location = new System.Drawing.Point(31, 55);
+            this.lblAlarmSet.Name = "lblAlarmSet";
+            this.lblAlarmSet.Size = new System.Drawing.Size(50, 12);
+            this.lblAlarmSet.TabIndex = 1;
+            this.lblAlarmSet.Text = "Alerm : ";
+            // 
+            // lblAlarm
+            // 
+            this.lblAlarm.AutoSize = true;
+            this.lblAlarm.Location = new System.Drawing.Point(31, 28);
+            this.lblAlarm.Name = "lblAlarm";
+            this.lblAlarm.Size = new System.Drawing.Size(57, 12);
+            this.lblAlarm.TabIndex = 0;
+            this.lblAlarm.Text = "알람 설정";
+            // 
+            // myTimer
+            // 
+            this.myTimer.Tick += new System.EventHandler(this.MyTimer_Tick);
             // 
             // FrmAlarm
             // 
@@ -194,11 +202,12 @@ namespace AlarmClockApp
             this.Controls.Add(this.TabClock);
             this.Name = "FrmAlarm";
             this.Text = "알람시계";
+            this.Load += new System.EventHandler(this.FrmAlarm_Load);
             this.TabClock.ResumeLayout(false);
-            this.TapSetAlarm.ResumeLayout(false);
-            this.TapSetAlarm.PerformLayout();
-            this.TapDigitalClock.ResumeLayout(false);
-            this.TapDigitalClock.PerformLayout();
+            this.TabSetAlarm.ResumeLayout(false);
+            this.TabSetAlarm.PerformLayout();
+            this.TabDigitalClock.ResumeLayout(false);
+            this.TabDigitalClock.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
@@ -208,19 +217,20 @@ namespace AlarmClockApp
         #endregion
 
         private System.Windows.Forms.TabControl TabClock;
-        private System.Windows.Forms.TabPage TapSetAlarm;
-        private System.Windows.Forms.TabPage TapDigitalClock;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TabPage TabSetAlarm;
+        private System.Windows.Forms.TabPage TabDigitalClock;
+        private System.Windows.Forms.Button btnClearAlarm;
+        private System.Windows.Forms.Button btnSetAlarm;
+        private System.Windows.Forms.DateTimePicker dtpTimePicker;
+        private System.Windows.Forms.DateTimePicker dtpDatePicker;
+        private System.Windows.Forms.Label lblTime2;
+        private System.Windows.Forms.Label lblDate2;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lblTime;
+        private System.Windows.Forms.Label lblDate;
+        private System.Windows.Forms.Label lblAlarmSet;
+        private System.Windows.Forms.Label lblAlarm;
+        private System.Windows.Forms.Timer myTimer;
     }
 }
 
