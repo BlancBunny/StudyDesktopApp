@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31019.35
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WinCalculatorApp", "WinCalculatorApp\WinCalculatorApp.csproj", "{71460FB1-BA90-4B8B-A3F6-C344E8F43AF5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyNotePadApp", "MyNotePadApp\MyNotePadApp.csproj", "{773055B5-D0A7-457F-A1BE-0273B4BDE025}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{71460FB1-BA90-4B8B-A3F6-C344E8F43AF5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{71460FB1-BA90-4B8B-A3F6-C344E8F43AF5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{71460FB1-BA90-4B8B-A3F6-C344E8F43AF5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{71460FB1-BA90-4B8B-A3F6-C344E8F43AF5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{773055B5-D0A7-457F-A1BE-0273B4BDE025}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{773055B5-D0A7-457F-A1BE-0273B4BDE025}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{773055B5-D0A7-457F-A1BE-0273B4BDE025}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{773055B5-D0A7-457F-A1BE-0273B4BDE025}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A51BF713-7318-4963-81C0-72064829D472}
+	EndGlobalSection
+EndGlobal
