@@ -13,7 +13,7 @@
             <TextBlock Text="UserID" FontSize="16" Margin="0,5"/>
             <TextBox Name="txtUserID" FontSize="16" KeyDown="txtUserID_KeyDown"/>
             <TextBlock Text="Password" FontSize="16" Margin="0,5"/>
-            <PasswordBox Name="txtPassword" FontSize="16" KeyDown="txtPassword_KeyDown"/>
+            <PasswordBox Name="txtPassword" FontSize="16" KeyDown="txtPassword_KeyDown" Height="23"/>
             <Button Name="btnLogin" Content="로그인" FontSize="15"
                     Width="100" Margin="10,20" Click="btnLogin_Click"/>
         </StackPanel>

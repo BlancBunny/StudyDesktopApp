@@ -129,7 +129,8 @@ namespace MyNotePadApp
                             sw.Close();
                         }
                     }
-
+                
+                
                     else // 파일 이름이 지정되어 있다면
                     {
                         StreamWriter sw = File.CreateText(fileName);
