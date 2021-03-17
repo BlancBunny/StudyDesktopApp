@@ -58,6 +58,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FormMember.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMember.Designer.cs">
+      <DependentUpon>FormMember.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormDivCode.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormDivCode.Designer.cs">
+      <DependentUpon>FormDivCode.cs</DependentUpon>
+    </Compile>
     <Compile Include="Helper\Common.cs" />
     <Compile Include="LoginForm.cs">
       <SubType>Form</SubType>
@@ -73,6 +85,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FormMember.resx">
+      <DependentUpon>FormMember.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormDivCode.resx">
+      <DependentUpon>FormDivCode.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>

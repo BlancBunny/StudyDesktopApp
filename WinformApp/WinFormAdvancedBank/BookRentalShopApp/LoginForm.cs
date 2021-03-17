@@ -35,13 +35,35 @@ namespace BookRentalShopApp
                 using (SqlConnection conn = new SqlConnection(Helper.Common.connString))
                 {
                     if (conn.State == ConnectionState.Closed) conn.Open();
+
+                    string strUserId;
+                    var query = $"SELECT userID FROM memberTbl " +
+                                $"WHERE userID = @userID " +
+                                $"AND passwords = @passwords; ";
                     
-                    SqlCommand cmd = new SqlCommand();
-                    
-                    // SQL Injection 해킹 방지
-                    SqlParameter param = new SqlParameter();
-                    
+                    SqlCommand cmd = new SqlCommand(query, conn);
+                    SqlParameter pUserID = new SqlParameter("@userID", SqlDbType.VarChar,20);
+                    pUserID.Value = txtUserID.Text;
+                    cmd.Parameters.Add(pUserID);
+                    SqlParameter pPasswords = new SqlParameter("@passwords", SqlDbType.VarChar, 20);
+                    pPasswords.Value = txtPassword.Text;
+                    cmd.Parameters.Add(pPasswords);
+
                     SqlDataReader reader = cmd.ExecuteReader();
+                    reader.Read();
+                    strUserId = reader["userID"] != null ? reader["userID"].ToString() : "";
+                    
+                    if (string.IsNullOrEmpty(strUserId))
+                    {
+                        MetroMessageBox.Show(this, "접속 실패", "로그인실패", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
+                    else
+                    {
+                        MetroMessageBox.Show(this, "접속 성공", "로그인성공", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        this.Close();
+                    }
+
 
                 }
             }
@@ -68,7 +90,7 @@ namespace BookRentalShopApp
 
         private void LoginForm_Load(object sender, EventArgs e)
         {
-            txtUserID.Focus();
+            this.Activate();
         }
     }
 }

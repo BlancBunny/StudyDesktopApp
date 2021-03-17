@@ -52,7 +52,7 @@ namespace BookRentalShopApp
             // 
             // 
             this.txtUserID.CustomButton.Image = null;
-            this.txtUserID.CustomButton.Location = new System.Drawing.Point(121, 1);
+            this.txtUserID.CustomButton.Location = new System.Drawing.Point(132, 1);
             this.txtUserID.CustomButton.Name = "";
             this.txtUserID.CustomButton.Size = new System.Drawing.Size(21, 21);
             this.txtUserID.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
@@ -83,7 +83,7 @@ namespace BookRentalShopApp
             // 
             // 
             this.txtPassword.CustomButton.Image = null;
-            this.txtPassword.CustomButton.Location = new System.Drawing.Point(121, 1);
+            this.txtPassword.CustomButton.Location = new System.Drawing.Point(132, 1);
             this.txtPassword.CustomButton.Name = "";
             this.txtPassword.CustomButton.Size = new System.Drawing.Size(21, 21);
             this.txtPassword.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
@@ -152,6 +152,7 @@ namespace BookRentalShopApp
             this.Controls.Add(this.metroLabel1);
             this.Name = "LoginForm";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "LoginForm";
             this.Load += new System.EventHandler(this.LoginForm_Load);
             this.ResumeLayout(false);
