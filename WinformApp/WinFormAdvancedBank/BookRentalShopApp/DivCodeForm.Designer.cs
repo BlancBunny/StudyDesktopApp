@@ -1,7 +1,7 @@
 ﻿
 namespace BookRentalShopApp
 {
-    partial class FormDivCode
+    partial class DivCodeForm
     {
         /// <summary>
         /// Required designer variable.
@@ -119,7 +119,6 @@ namespace BookRentalShopApp
             this.txtDivName.MaxLength = 32767;
             this.txtDivName.Name = "txtDivName";
             this.txtDivName.PasswordChar = '\0';
-            this.txtDivName.PromptText = "구분 코드명 입력";
             this.txtDivName.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.txtDivName.SelectedText = "";
             this.txtDivName.SelectionLength = 0;
@@ -153,7 +152,6 @@ namespace BookRentalShopApp
             this.txtDiv.MaxLength = 32767;
             this.txtDiv.Name = "txtDiv";
             this.txtDiv.PasswordChar = '\0';
-            this.txtDiv.PromptText = "구분 코드 입력";
             this.txtDiv.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.txtDiv.SelectedText = "";
             this.txtDiv.SelectionLength = 0;
@@ -200,7 +198,7 @@ namespace BookRentalShopApp
             this.dgvData.TabIndex = 1;
             this.dgvData.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvData_CellClick);
             // 
-            // FormDivCode
+            // DivCodeForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -214,8 +212,8 @@ namespace BookRentalShopApp
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "책 구분코드 관리";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            this.Load += new System.EventHandler(this.FormDivCode_Load);
-            this.Resize += new System.EventHandler(this.FormDivCode_Resize);
+            this.Load += new System.EventHandler(this.DivCodeForm_Load);
+            this.Resize += new System.EventHandler(this.DivCodeForm_Resize);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvData)).EndInit();

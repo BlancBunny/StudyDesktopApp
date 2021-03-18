@@ -17,7 +17,6 @@ namespace BookRentalShopApp
         public MainForm()
         {
             InitializeComponent();
-            
         }
 
         private void MainForm_Shown(object sender, EventArgs e)
@@ -27,21 +26,30 @@ namespace BookRentalShopApp
             MainForm_Resize(sender, e);
         }
 
-        private void mnuDivCode_Click(object sender, EventArgs e)
+        private void InitChildForm(Form form, string strTitle)
         {
-            FormDivCode form = new FormDivCode();
             form.Dock = DockStyle.Fill;
             form.MdiParent = this;
             form.Show();
             form.WindowState = FormWindowState.Maximized;
         }
+
+        private void mnuDivCode_Click(object sender, EventArgs e)
+        {
+            DivCodeForm form = new DivCodeForm();
+            InitChildForm(form, "구분코드 관리");
+        }
+
         private void mnuMember_Click(object sender, EventArgs e)
         {
-            FormMember form = new FormMember();
-            form.Dock = DockStyle.Fill;
-            form.MdiParent = this;
-            form.Show();
-            form.WindowState = FormWindowState.Maximized;
+            MemberForm form = new MemberForm();
+            InitChildForm(form, "회원 관리");
+        }
+
+        private void mnuBook_Click(object sender, EventArgs e)
+        {
+            BooksForm form = new BooksForm();
+            InitChildForm(form, "도서 관리");
         }
 
         private void MainForm_FormClosing(object sender, FormClosingEventArgs e)

@@ -50,9 +50,10 @@ namespace BookRentalShopApp
                     cmd.Parameters.Add(pPasswords);
 
                     SqlDataReader reader = cmd.ExecuteReader();
+                    // 비밀번호 오류 처리
                     reader.Read();
                     strUserId = reader["userID"] != null ? reader["userID"].ToString() : "";
-                    
+                    reader.Close();
                     if (string.IsNullOrEmpty(strUserId))
                     {
                         MetroMessageBox.Show(this, "접속 실패", "로그인실패", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -60,6 +61,12 @@ namespace BookRentalShopApp
                     }
                     else
                     {
+                        var updateQuery = $"UPDATE memberTbl SET " +
+                                          $"lastLoginDt = GETDATE(), " +
+                                          $"loginIpAddr = '{Helper.Common.GetLocalIp()}' " +
+                                          $"WHERE userId = '{strUserId}' ";
+                        cmd.CommandText = updateQuery;
+                        cmd.ExecuteNonQuery();
                         MetroMessageBox.Show(this, "접속 성공", "로그인성공", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         this.Close();
                     }

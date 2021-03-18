@@ -58,17 +58,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="FormMember.cs">
+    <Compile Include="BooksForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormMember.Designer.cs">
-      <DependentUpon>FormMember.cs</DependentUpon>
+    <Compile Include="BooksForm.Designer.cs">
+      <DependentUpon>BooksForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormDivCode.cs">
+    <Compile Include="MemberForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormDivCode.Designer.cs">
-      <DependentUpon>FormDivCode.cs</DependentUpon>
+    <Compile Include="MemberForm.Designer.cs">
+      <DependentUpon>MemberForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DivCodeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DivCodeForm.Designer.cs">
+      <DependentUpon>DivCodeForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Helper\Common.cs" />
     <Compile Include="LoginForm.cs">
@@ -85,11 +91,14 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="FormMember.resx">
-      <DependentUpon>FormMember.cs</DependentUpon>
+    <EmbeddedResource Include="BooksForm.resx">
+      <DependentUpon>BooksForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormDivCode.resx">
-      <DependentUpon>FormDivCode.cs</DependentUpon>
+    <EmbeddedResource Include="MemberForm.resx">
+      <DependentUpon>MemberForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DivCodeForm.resx">
+      <DependentUpon>DivCodeForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>

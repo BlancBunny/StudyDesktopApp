@@ -1,7 +1,7 @@
 ﻿
 namespace BookRentalShopApp
 {
-    partial class FormMember
+    partial class MemberForm
     {
         /// <summary>
         /// Required designer variable.
@@ -142,7 +142,6 @@ namespace BookRentalShopApp
             this.txtName.MaxLength = 32767;
             this.txtName.Name = "txtName";
             this.txtName.PasswordChar = '\0';
-            this.txtName.PromptText = "이름";
             this.txtName.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.txtName.SelectedText = "";
             this.txtName.SelectionLength = 0;
@@ -176,7 +175,6 @@ namespace BookRentalShopApp
             this.txtIdx.MaxLength = 6;
             this.txtIdx.Name = "txtIdx";
             this.txtIdx.PasswordChar = '\0';
-            this.txtIdx.PromptText = "순번";
             this.txtIdx.ReadOnly = true;
             this.txtIdx.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.txtIdx.SelectedText = "";
@@ -263,7 +261,6 @@ namespace BookRentalShopApp
             this.txtAddress.MaxLength = 32767;
             this.txtAddress.Name = "txtAddress";
             this.txtAddress.PasswordChar = '\0';
-            this.txtAddress.PromptText = "주소";
             this.txtAddress.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.txtAddress.SelectedText = "";
             this.txtAddress.SelectionLength = 0;
@@ -306,7 +303,6 @@ namespace BookRentalShopApp
             this.txtMobile.MaxLength = 20;
             this.txtMobile.Name = "txtMobile";
             this.txtMobile.PasswordChar = '\0';
-            this.txtMobile.PromptText = "휴대폰";
             this.txtMobile.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.txtMobile.SelectedText = "";
             this.txtMobile.SelectionLength = 0;
@@ -349,7 +345,6 @@ namespace BookRentalShopApp
             this.txtEmail.MaxLength = 32767;
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.PasswordChar = '\0';
-            this.txtEmail.PromptText = "이메일";
             this.txtEmail.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.txtEmail.SelectedText = "";
             this.txtEmail.SelectionLength = 0;
@@ -392,7 +387,6 @@ namespace BookRentalShopApp
             this.txtUserID.MaxLength = 32767;
             this.txtUserID.Name = "txtUserID";
             this.txtUserID.PasswordChar = '\0';
-            this.txtUserID.PromptText = "아이디";
             this.txtUserID.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.txtUserID.SelectedText = "";
             this.txtUserID.SelectionLength = 0;
@@ -435,7 +429,6 @@ namespace BookRentalShopApp
             this.txtPassword.MaxLength = 32767;
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PasswordChar = '\0';
-            this.txtPassword.PromptText = "패스워드";
             this.txtPassword.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.txtPassword.SelectedText = "";
             this.txtPassword.SelectionLength = 0;

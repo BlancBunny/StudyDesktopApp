@@ -83,6 +83,7 @@ namespace BookRentalShopApp
             this.mnuBook.Name = "mnuBook";
             this.mnuBook.Size = new System.Drawing.Size(180, 22);
             this.mnuBook.Text = "도서(&B)";
+            this.mnuBook.Click += new System.EventHandler(this.mnuBook_Click);
             // 
             // toolStripMenuItem1
             // 

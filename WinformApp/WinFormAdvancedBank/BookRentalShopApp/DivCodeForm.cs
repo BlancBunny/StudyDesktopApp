@@ -13,13 +13,13 @@ using System.Windows.Forms;
 
 namespace BookRentalShopApp
 {
-    public partial class FormDivCode : MetroForm
+    public partial class DivCodeForm : MetroForm
     {
         #region 전역 변수
             public bool isNew { get; set; }
         #endregion
 
-        public FormDivCode()
+        public DivCodeForm()
         {
             InitializeComponent();
         }
@@ -27,12 +27,12 @@ namespace BookRentalShopApp
 
         #region Event_Handler
 
-        private void FormDivCode_Load(object sender, EventArgs e)
+        private void DivCodeForm_Load(object sender, EventArgs e)
         {
             RefreshData();
         }
 
-        private void FormDivCode_Resize(object sender, EventArgs e)
+        private void DivCodeForm_Resize(object sender, EventArgs e)
         {
             groupBox1.Location = new Point(dgvData.Width + 25 ,60);
             groupBox1.Width = this.Width - 45 - dgvData.Width;

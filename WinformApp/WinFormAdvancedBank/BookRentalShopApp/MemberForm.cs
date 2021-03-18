@@ -13,13 +13,13 @@ using System.Windows.Forms;
 
 namespace BookRentalShopApp
 {
-    public partial class FormMember : MetroForm
+    public partial class MemberForm : MetroForm
     {
         #region 전역 변수
             public bool isNew { get; set; }
         #endregion
 
-        public FormMember()
+        public MemberForm()
         {
             InitializeComponent();
         }
@@ -274,7 +274,7 @@ namespace BookRentalShopApp
             if (string.IsNullOrEmpty(txtName.Text)
                 || string.IsNullOrEmpty(txtAddress.Text) || string.IsNullOrEmpty(txtMobile.Text)
                 || string.IsNullOrEmpty(txtEmail.Text) || cboLevel.SelectedIndex == -1
-                || string.IsNullOrEmpty(txtUserID.Text) || string.IsNullOrEmpty(txtPassword.Text))
+                || string.IsNullOrEmpty(txtUserID.Text))
             {
                 MetroMessageBox.Show(this, "빈 값은 처리할 수 없습니다.", "경고",
                     MessageBoxButtons.OK, MessageBoxIcon.Warning);
