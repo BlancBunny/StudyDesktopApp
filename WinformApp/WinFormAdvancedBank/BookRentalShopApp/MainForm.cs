@@ -69,6 +69,10 @@ namespace BookRentalShopApp
             menuStrip1.Height = this.Height;
         }
 
-        
+        private void mnuRental_Click(object sender, EventArgs e)
+        {
+            RentalForm form = new RentalForm();
+            InitChildForm(form, "대여 관리");
+        }
     }
 }

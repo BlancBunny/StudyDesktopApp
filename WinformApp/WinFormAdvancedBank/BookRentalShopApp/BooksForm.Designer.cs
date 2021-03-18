@@ -30,8 +30,8 @@ namespace BookRentalShopApp
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.cboDivision = new MetroFramework.Controls.MetroComboBox();
-            this.mdtReleaseDate = new MetroFramework.Controls.MetroDateTime();
+            this.dtpReleaseDate = new System.Windows.Forms.DateTimePicker();
+            this.cboDivision = new System.Windows.Forms.ComboBox();
             this.btnSave = new MetroFramework.Controls.MetroButton();
             this.btnNew = new MetroFramework.Controls.MetroButton();
             this.btnDelete = new MetroFramework.Controls.MetroButton();
@@ -60,8 +60,8 @@ namespace BookRentalShopApp
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.groupBox1.Controls.Add(this.dtpReleaseDate);
             this.groupBox1.Controls.Add(this.cboDivision);
-            this.groupBox1.Controls.Add(this.mdtReleaseDate);
             this.groupBox1.Controls.Add(this.btnSave);
             this.groupBox1.Controls.Add(this.btnNew);
             this.groupBox1.Controls.Add(this.btnDelete);
@@ -88,23 +88,21 @@ namespace BookRentalShopApp
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "상세";
             // 
+            // dtpReleaseDate
+            // 
+            this.dtpReleaseDate.Location = new System.Drawing.Point(92, 175);
+            this.dtpReleaseDate.Name = "dtpReleaseDate";
+            this.dtpReleaseDate.Size = new System.Drawing.Size(154, 23);
+            this.dtpReleaseDate.TabIndex = 13;
+            // 
             // cboDivision
             // 
+            this.cboDivision.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboDivision.FormattingEnabled = true;
-            this.cboDivision.ItemHeight = 23;
-            this.cboDivision.Location = new System.Drawing.Point(91, 133);
+            this.cboDivision.Location = new System.Drawing.Point(91, 137);
             this.cboDivision.Name = "cboDivision";
-            this.cboDivision.Size = new System.Drawing.Size(155, 29);
-            this.cboDivision.TabIndex = 4;
-            this.cboDivision.UseSelectable = true;
-            // 
-            // mdtReleaseDate
-            // 
-            this.mdtReleaseDate.Location = new System.Drawing.Point(91, 172);
-            this.mdtReleaseDate.MinimumSize = new System.Drawing.Size(0, 29);
-            this.mdtReleaseDate.Name = "mdtReleaseDate";
-            this.mdtReleaseDate.Size = new System.Drawing.Size(155, 29);
-            this.mdtReleaseDate.TabIndex = 5;
+            this.cboDivision.Size = new System.Drawing.Size(155, 23);
+            this.cboDivision.TabIndex = 12;
             // 
             // btnSave
             // 
@@ -438,6 +436,7 @@ namespace BookRentalShopApp
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(628, 475);
+            this.ControlBox = false;
             this.Controls.Add(this.dgvData);
             this.Controls.Add(this.groupBox1);
             this.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
@@ -445,7 +444,7 @@ namespace BookRentalShopApp
             this.Name = "BooksForm";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "회원 관리";
+            this.Text = "도서 관리";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.BooksForm_Load);
             this.Resize += new System.EventHandler(this.BooksForm_Resize);
@@ -475,9 +474,9 @@ namespace BookRentalShopApp
         private MetroFramework.Controls.MetroLabel metroLabel4;
         private MetroFramework.Controls.MetroLabel metroLabel3;
         private MetroFramework.Controls.MetroTextBox txtAuthor;
-        private MetroFramework.Controls.MetroComboBox cboDivision;
-        private MetroFramework.Controls.MetroDateTime mdtReleaseDate;
         private MetroFramework.Controls.MetroTextBox txtDescription;
         private MetroFramework.Controls.MetroLabel metroLabel8;
+        private System.Windows.Forms.DateTimePicker dtpReleaseDate;
+        private System.Windows.Forms.ComboBox cboDivision;
     }
 }

@@ -95,6 +95,7 @@ namespace BookRentalShopApp
             this.mnuRental.Name = "mnuRental";
             this.mnuRental.Size = new System.Drawing.Size(180, 22);
             this.mnuRental.Text = "대여(&R) ";
+            this.mnuRental.Click += new System.EventHandler(this.mnuRental_Click);
             // 
             // mnuExit
             // 

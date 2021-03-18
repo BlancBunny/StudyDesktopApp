@@ -119,6 +119,7 @@ namespace BookRentalShopApp
             this.txtDivName.MaxLength = 32767;
             this.txtDivName.Name = "txtDivName";
             this.txtDivName.PasswordChar = '\0';
+            this.txtDivName.PromptText = "구분 코드명 입력";
             this.txtDivName.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.txtDivName.SelectedText = "";
             this.txtDivName.SelectionLength = 0;
@@ -152,6 +153,7 @@ namespace BookRentalShopApp
             this.txtDiv.MaxLength = 32767;
             this.txtDiv.Name = "txtDiv";
             this.txtDiv.PasswordChar = '\0';
+            this.txtDiv.PromptText = "구분 코드 입력";
             this.txtDiv.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.txtDiv.SelectedText = "";
             this.txtDiv.SelectionLength = 0;
@@ -203,11 +205,12 @@ namespace BookRentalShopApp
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(621, 324);
+            this.ControlBox = false;
             this.Controls.Add(this.dgvData);
             this.Controls.Add(this.groupBox1);
             this.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.Name = "FormDivCode";
+            this.Name = "DivCodeForm";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "책 구분코드 관리";
