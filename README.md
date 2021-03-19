@@ -31,7 +31,7 @@ C# 데스크톱 앱 개발 학습 리포지토리
 ![도서 목록 관리](https://user-images.githubusercontent.com/77951828/111719095-85724180-889e-11eb-8215-2aa10b0a3d6a.png)  
 4) 대여 현황 관리  
 ![대여 현황 관리](https://user-images.githubusercontent.com/77951828/111719193-b9e5fd80-889e-11eb-9ea7-2e5ee7b6d3f7.png)  
-5) DB 연동  
+5) DB 연동 (MS-SQL)
 ![DB 연동](https://user-images.githubusercontent.com/77951828/111719285-e7cb4200-889e-11eb-958b-58821a0c000d.png)  
 
 
