@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MonteCarloPiApp"
         mc:Ignorable="d"
-        Title="MainWindow" Height="495
+        Title="PiMeasureSimulation" Height="495
         " Width="450
         ">
     <DockPanel>

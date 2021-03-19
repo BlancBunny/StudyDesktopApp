@@ -159,7 +159,6 @@ namespace BookRentalShopApp
                         var pIdx = new SqlParameter("@Idx", SqlDbType.Int);
                         pIdx.Value = txtIdx.Text;
                         cmd.Parameters.Add(pIdx);
-
                         var pRentalState = new SqlParameter("@rentalState", SqlDbType.Char, 1);
                         pRentalState.Value = cboRentalState.SelectedValue;
                         cmd.Parameters.Add(pRentalState);
@@ -182,6 +181,7 @@ namespace BookRentalShopApp
                         var pRentalState = new SqlParameter("@rentalState", SqlDbType.Char, 1);
                         pRentalState.Value = cboRentalState.SelectedValue;
                         cmd.Parameters.Add(pRentalState);
+                        
 
                     }
 

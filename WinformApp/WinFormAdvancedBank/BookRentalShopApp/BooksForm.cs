@@ -162,7 +162,7 @@ namespace BookRentalShopApp
                     pPrice.Value = txtPrice.Text;
                     cmd.Parameters.Add(pPrice);
                     var pDescription = new SqlParameter("@Description", SqlDbType.NVarChar, 200);
-                    pDescription.Value = txtDescription.Text;
+                    pDescription.Value = Helper.Common.ReplaceCmdText(txtDescription.Text);
                     cmd.Parameters.Add(pDescription);
 
 

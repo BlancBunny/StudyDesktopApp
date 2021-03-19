@@ -61,30 +61,10 @@ namespace IotSensorApp
             btnConnect.Enabled = btnDisconnect.Enabled = false;
             
         }
+        
         private void InitChart()
         {
-            chtPhotoResistor.ChartAreas[0].BackColor = Color.Blue;
-            
-            // Axis X
-            chtPhotoResistor.ChartAreas[0].AxisX.Minimum = 0;
-            chtPhotoResistor.ChartAreas[0].AxisX.Maximum = xCount;
-            chtPhotoResistor.ChartAreas[0].AxisX.Interval = xCount / 4;
-            chtPhotoResistor.ChartAreas[0].AxisX.MajorGrid.LineColor = Color.WhiteSmoke;
-            chtPhotoResistor.ChartAreas[0].AxisX.MajorGrid.LineDashStyle = ChartDashStyle.Dash;
-
-            // Axis Y
-            chtPhotoResistor.ChartAreas[0].AxisY.Minimum = 300;
-            chtPhotoResistor.ChartAreas[0].AxisY.Maximum = 700;
-            chtPhotoResistor.ChartAreas[0].AxisY.Interval = 50;
-            chtPhotoResistor.ChartAreas[0].AxisY.MajorGrid.LineColor = Color.WhiteSmoke;
-            chtPhotoResistor.ChartAreas[0].AxisY.MajorGrid.LineDashStyle = ChartDashStyle.Dash;
-
-            // Scroll
-            chtPhotoResistor.ChartAreas[0].CursorX.AutoScroll = true;
-            chtPhotoResistor.ChartAreas[0].AxisX.ScaleView.Zoomable = true;
-            chtPhotoResistor.ChartAreas[0].AxisX.ScrollBar.ButtonColor = Color.LightSteelBlue;
-            chtPhotoResistor.ChartAreas[0].AxisX.ScrollBar.ButtonStyle = ScrollBarButtonStyles.SmallScroll; 
-
+            ChartShape();
             // Series
             chtPhotoResistor.Series.Clear();
             chtPhotoResistor.Series.Add("PhotoValue");
@@ -96,6 +76,32 @@ namespace IotSensorApp
             if (chtPhotoResistor.Legends.Count > 0) chtPhotoResistor.Legends.RemoveAt(0);
             
         }
+        private void ChartShape()
+        {
+            chtPhotoResistor.ChartAreas[0].BackColor = Color.Blue;
+
+            // Axis X
+            chtPhotoResistor.ChartAreas[0].AxisX.Minimum = 0;
+            chtPhotoResistor.ChartAreas[0].AxisX.Maximum = xCount;
+            chtPhotoResistor.ChartAreas[0].AxisX.Interval = xCount / 8;
+            chtPhotoResistor.ChartAreas[0].AxisX.MajorGrid.LineColor = Color.WhiteSmoke;
+            chtPhotoResistor.ChartAreas[0].AxisX.MajorGrid.LineDashStyle = ChartDashStyle.Dash;
+
+            // Axis Y
+            chtPhotoResistor.ChartAreas[0].AxisY.Minimum = 200;
+            chtPhotoResistor.ChartAreas[0].AxisY.Maximum = 700;
+            chtPhotoResistor.ChartAreas[0].AxisY.Interval = 100;
+            chtPhotoResistor.ChartAreas[0].AxisY.MajorGrid.LineColor = Color.WhiteSmoke;
+            chtPhotoResistor.ChartAreas[0].AxisY.MajorGrid.LineDashStyle = ChartDashStyle.Dash;
+
+            // Scroll
+            chtPhotoResistor.ChartAreas[0].CursorX.AutoScroll = true;
+            chtPhotoResistor.ChartAreas[0].AxisX.ScaleView.Zoomable = true;
+            chtPhotoResistor.ChartAreas[0].AxisX.ScrollBar.ButtonColor = Color.LightSteelBlue;
+            chtPhotoResistor.ChartAreas[0].AxisX.ScrollBar.ButtonStyle = ScrollBarButtonStyles.SmallScroll;
+
+        }
+
         private void btnConnect_Click(object sender, EventArgs e)
         {
             // TODO 실제 작업 시 작성
@@ -106,10 +112,14 @@ namespace IotSensorApp
         }
         private void T_Tick(object sender, EventArgs e)
         {
+            ChartShape();
             int rValue = r.Next(-20, 20);
             value += rValue;
             ShowValue(value.ToString());
         }
+
+        
+
         /// <summary>
         /// 측정 값 출력
         /// </summary>

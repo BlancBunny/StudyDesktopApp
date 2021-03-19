@@ -25,7 +25,6 @@ namespace BookRentalShopApp.Helper
             }
         }
 
-
         internal static string ReplaceCmdText (string strSource)
         {
             var result = strSource.Replace("＇", "");

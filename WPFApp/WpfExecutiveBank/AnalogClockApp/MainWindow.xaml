@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:AnalogClockApp"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="350">
+        Title="AnalogClock" Height="350" Width="350">
     <Grid Margin="10">
         <Canvas Name="canvas1" Width="250" Height="250">
             <Ellipse Name="aClock" Width="250" Height="250" />

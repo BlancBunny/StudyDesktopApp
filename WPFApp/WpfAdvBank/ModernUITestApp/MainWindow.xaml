@@ -1,0 +1,134 @@
+﻿<mah:MetroWindow
+    x:Class="ModernUITestApp.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:mah="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+    xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+    xmlns:local="clr-namespace:ModernUITestApp"
+    Title="ModernUITest" 
+    Width="800"
+    Height="450" 
+    GlowBrush="{DynamicResource MahApps.Brushes.Accent}" Initialized="MetroWindow_Initialized"
+    ResizeMode="CanResizeWithGrip"
+    WindowStartupLocation="CenterScreen"
+    mc:Ignorable="d">
+    <mah:MetroWindow.LeftWindowCommands>
+        <mah:WindowCommands>
+            <Button Click="LaunchYouTubeSite" ToolTip="Open up the YouTube site">
+                <iconPacks:PackIconModern Width="22"
+                                  Height="22"
+                                  Kind="Youtube" />
+            </Button>
+        </mah:WindowCommands>
+    </mah:MetroWindow.LeftWindowCommands>
+    <mah:MetroWindow.RightWindowCommands>
+        <mah:WindowCommands>
+            <Button Name="Heart" Click="Heart_Click" Content="Heart">
+                <Button.ContentTemplate>
+                    <DataTemplate>
+                        <StackPanel Orientation="Horizontal">
+                            <iconPacks:PackIconModern Width="22"
+                                        Height="22"
+                                        VerticalAlignment="Center"
+                                        Kind="Heart" />
+                            <TextBlock Margin="4 0 0 0"
+                         VerticalAlignment="Center"
+                         Text="{Binding}" />
+                        </StackPanel>
+                    </DataTemplate>
+                </Button.ContentTemplate>
+            </Button>
+        </mah:WindowCommands>
+    </mah:MetroWindow.RightWindowCommands>
+
+    <DockPanel>
+        <Grid DockPanel.Dock="Top">
+            <Menu IsMainMenu="True">
+                <MenuItem Header="파일(_F)">
+                    <MenuItem Header="열기(_O)">
+                        <MenuItem.Icon>
+                            <iconPacks:PackIconModern Kind="BookHardcoverOpen" />
+                        </MenuItem.Icon>
+                    </MenuItem>
+                    <MenuItem Header="저장(_S)">
+                        <MenuItem.Icon>
+                            <iconPacks:PackIconModern Kind="Save" />
+                        </MenuItem.Icon>
+                    </MenuItem>
+                    <Separator/>
+                    <MenuItem Name="MnuExit" Click="MnuExit_Click" Header="종료(_X)">
+                        <MenuItem.Icon>
+                            <iconPacks:PackIconVaadinIcons Kind="ExitOutline" />
+                        </MenuItem.Icon>
+                    </MenuItem>
+                </MenuItem>
+                <MenuItem Header="편집(_E)"></MenuItem>
+                <MenuItem Header="도움말(_H)"></MenuItem>
+            </Menu>
+        </Grid>
+        <Grid Background="WhiteSmoke">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition Width="1*"/>
+            </Grid.ColumnDefinitions>
+            <Grid Grid.Column="1" Margin="15">
+                <GroupBox Header="상세">
+                    <Grid Margin="10">
+                        <Grid.RowDefinitions>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                        </Grid.RowDefinitions>
+                        <TextBox Grid.Row="0"
+                            materialDesign:HintAssist.Hint="제목"
+                            Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+                            VerticalAlignment="Center" />
+                        <TextBox Grid.Row="1"
+                            materialDesign:HintAssist.Hint="저자"
+                            Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+                            VerticalAlignment="Center"/>
+                        <ComboBox Name="cboDivision"  Grid.Row="2"
+                                  materialDesign:HintAssist.Hint="장르 검색"
+                                  materialDesign:HintAssist.HintOpacity=".26"
+                                  IsEditable="True">
+                        </ComboBox>
+                        <DatePicker Grid.Row="3"
+                              materialDesign:HintAssist.Hint="대여일"
+                              Style="{StaticResource MaterialDesignFloatingHintDatePicker}" />
+                        <TextBox Grid.Row="4"
+                            materialDesign:HintAssist.Hint="ISBN"
+                            Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+                            VerticalAlignment="Center"/>
+                        <TextBox Grid.Row="5"
+                            materialDesign:HintAssist.Hint="가격"
+                            Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+                            VerticalAlignment="Center"/>
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Grid.Row="6">
+                            <Button
+                              Style="{StaticResource MaterialDesignRaisedButton}"
+                              ToolTip="Resource name: MaterialDesignRaisedButton"
+                              Content="신규(_N)" Margin="0,3" Width="60" />
+                            <Button
+                              Style="{StaticResource MaterialDesignRaisedButton}"
+                              ToolTip="Resource name: MaterialDesignRaisedButton"
+                              Content="수정(_M)" Margin="0,3" Width="60" />
+                            <Button
+                              Style="{StaticResource MaterialDesignRaisedButton}"
+                              ToolTip="Resource name: MaterialDesignRaisedButton"
+                              Content="삭제(_D)" Margin="0,3" Width="60" />
+                        </StackPanel>
+                    </Grid>
+
+                </GroupBox>
+            </Grid>
+            <Grid Grid.Column="1"></Grid>
+        </Grid>
+    </DockPanel>
+</mah:MetroWindow>
