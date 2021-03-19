@@ -30,8 +30,9 @@ C# 데스크톱 앱 개발 학습 리포지토리
 ### 4. [수치 모니터링 프로그램](https://github.com/BlancBunny/StudyDesktopApp/tree/main/WinformApp/WinFormAdvancedBank/IotSensorApp)  
 
 ![모니터링 프로그램](https://user-images.githubusercontent.com/77951828/111720968-4f36c100-88a2-11eb-8208-8d19d3971676.png)  
-주요 기능 : 입력 값 표시, , 그래프 표시  
+주요 기능 : 입력 값 표시, 그래프 표시  
           (입력 값은 Random 값)  
+
 관찰 로그 기록 및 저장(DB 연동)  
 ![로그](https://user-images.githubusercontent.com/77951828/111721091-8b6a2180-88a2-11eb-9515-f9aff4d74545.png)  
 
