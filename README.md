@@ -8,7 +8,7 @@ C# 데스크톱 앱 개발 학습 리포지토리
 
 
 ![주소록](https://user-images.githubusercontent.com/77951828/111265340-51afd580-866c-11eb-8534-b304fb53ed9e.png)  
-주요 기능 : 주소록 입력, 수정, 삭제 (SQL Server DB 연동)
+주요 기능 : 주소록 입력, 수정, 삭제 (MS-SQL Server DB 연동)
 
 ### 2. [메모장 프로그램](https://github.com/BlancBunny/StudyDesktopApp/tree/main/WinformApp/WinExecutiveBank/MyNotePadApp)
 
