@@ -20,6 +20,17 @@ C# 데스크톱 앱 개발 학습 리포지토리
 ![계산기](https://user-images.githubusercontent.com/77951828/111266775-5b3a3d00-866e-11eb-94a6-acae9096d4d3.png)  
 주요 기능 : 사칙 연산, 계산기 메모리 기능   // 제곱, 루트, 분수 기능 미구현
 
-### 4. [도서 대여점 관리 프로그램]
+### 4. [도서 대여점 관리 프로그램](https://github.com/BlancBunny/StudyDesktopApp/tree/main/WinformApp/WinFormAdvancedBank/BookRentalShopApp)
+주요 기능 : 관리자 로그인 기능, 회원 관리, 도서 관리, 대여 현황 관리, DB CRUD
+
+1) ![로그인 화면](https://user-images.githubusercontent.com/77951828/111719135-9d49c580-889e-11eb-9c7d-e56db775adf8.png)  
+2) ![회원 관리창](https://user-images.githubusercontent.com/77951828/111718946-3c21f200-889e-11eb-8656-b4f02b6030fc.png)  
+3) ![도서 목록 관리](https://user-images.githubusercontent.com/77951828/111719095-85724180-889e-11eb-8215-2aa10b0a3d6a.png)  
+4) ![대여 현황 관리](https://user-images.githubusercontent.com/77951828/111719193-b9e5fd80-889e-11eb-9ea7-2e5ee7b6d3f7.png)  
+5) ![DB 연동](https://user-images.githubusercontent.com/77951828/111719285-e7cb4200-889e-11eb-958b-58821a0c000d.png)  
+
+
+
+
 
 ## WPF Application 
