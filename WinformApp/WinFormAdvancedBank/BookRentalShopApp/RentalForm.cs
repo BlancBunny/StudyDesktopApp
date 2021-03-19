@@ -139,15 +139,17 @@ namespace BookRentalShopApp
                                                     (@memberIdx
                                                     ,@bookIdx
                                                     ,GETDATE()
-                                                    ,@rentalState";
+                                                    ,@rentalState)";
                     }
 
                     else
                     {
                         query = @"UPDATE [dbo].[rentaltbl]
-                                            SET [returnDate] = GETDATE()
-                                            ,[rentalState] = @rentalState
-                                            WHERE Idx = @Idx";
+                                            SET [returnDate] = case @rentalState
+                                                               WHEN 'T' THEN GETDATE()
+                                                               WHEN 'R' THEN null end 
+                                            ,[rentalState] = @rentalState 
+                                            WHERE Idx = @Idx; ";
                     }
 
                     cmd.CommandText = query;
@@ -157,21 +159,33 @@ namespace BookRentalShopApp
                         var pIdx = new SqlParameter("@Idx", SqlDbType.Int);
                         pIdx.Value = txtIdx.Text;
                         cmd.Parameters.Add(pIdx);
+
+                        var pRentalState = new SqlParameter("@rentalState", SqlDbType.Char, 1);
+                        pRentalState.Value = cboRentalState.SelectedValue;
+                        cmd.Parameters.Add(pRentalState);
+
+                    }
+                    else
+                    {
+                        var pMemberIdx = new SqlParameter("@MemberIdx", SqlDbType.Int);
+                        pMemberIdx.Value = selMemberIdx;
+                        cmd.Parameters.Add(pMemberIdx);
+
+                        var pBookIdx = new SqlParameter("@BookIdx", SqlDbType.Int);
+                        pBookIdx.Value = selBookIdx;
+                        cmd.Parameters.Add(pBookIdx);
+
+                        var pRentalDate = new SqlParameter("@rentalDate", SqlDbType.Date);
+                        pRentalDate.Value = dtpRentalDate.Value;
+                        cmd.Parameters.Add(pRentalDate);
+
+                        var pRentalState = new SqlParameter("@rentalState", SqlDbType.Char, 1);
+                        pRentalState.Value = cboRentalState.SelectedValue;
+                        cmd.Parameters.Add(pRentalState);
+
                     }
 
-
-                    var pMemberIdx = new SqlParameter("@MemberIdx", SqlDbType.Int);
-                    pMemberIdx.Value = selMemberIdx;
-                    cmd.Parameters.Add(pMemberIdx);
-
-                    var pBookIdx = new SqlParameter("@BookIdx", SqlDbType.Int);
-                    pBookIdx.Value = selBookIdx;
-                    cmd.Parameters.Add(pBookIdx);
-
-                    var pRentalState = new SqlParameter("@rentalState", SqlDbType.Char, 1);
-                    pRentalState.Value = cboRentalState.SelectedValue;
-                    cmd.Parameters.Add(pRentalState);
-
+                    
 
                     var result = cmd.ExecuteNonQuery();
                     if (result == 1)

@@ -21,9 +21,18 @@ namespace BookRentalShopApp.Helper
                         break;
                     }
                 }
-
                 return localIp;
             }
+        }
+
+
+        internal static string ReplaceCmdText (string strSource)
+        {
+            var result = strSource.Replace("＇", "");
+            result = strSource.Replace("--", "");
+            result = strSource.Replace(";", "");
+
+            return result;
         }
     }
 
