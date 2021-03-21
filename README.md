@@ -68,8 +68,8 @@ C# 데스크톱 앱 개발 학습 리포지토리
 ![n=1561](https://user-images.githubusercontent.com/77951828/111722699-b3a74f80-88a5-11eb-972b-92a6a9a75ce5.png)  
 2) n = 4207  
 ![n=4207](https://user-images.githubusercontent.com/77951828/111722750-cd489700-88a5-11eb-9408-b07d3ac6fb84.png)  
-3) n = 12000
-![n=12000](https://user-images.githubusercontent.com/77951828/111722943-20bae500-88a6-11eb-8878-21b7b3d9546f.png)  
+3) n = 12751  
+![n=12751](https://user-images.githubusercontent.com/77951828/111722943-20bae500-88a6-11eb-8878-21b7b3d9546f.png)  
 
 -----------------------------------
  
