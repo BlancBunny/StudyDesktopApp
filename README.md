@@ -60,7 +60,8 @@ C# 데스크톱 앱 개발 학습 리포지토리
 
 -----------------------------------
 
-### 2. [몬테카를로 시뮬레이션]
+### 2. [몬테카를로 시뮬레이션](https://github.com/BlancBunny/StudyDesktopApp/tree/main/WPFApp/WpfExecutiveBank/MonteCarloPiApp)  
+
 [MonteCarlo Method](https://ko.wikipedia.org/wiki/%EB%AA%AC%ED%85%8C%EC%B9%B4%EB%A5%BC%EB%A1%9C_%EB%B0%A9%EB%B2%95) : 난수를 이용하여 함수의 값을 확률적으로 계산하는 알고리즘  
  WPF로 그린 정사각형 안에 꼭 맞는 원을 그린 후  
  난수 좌표에 점을 찍어 원주율 Pi의 근사값을 구하는 프로그램
@@ -73,4 +74,6 @@ C# 데스크톱 앱 개발 학습 리포지토리
 
 -----------------------------------
  
-### 3. [Snake Bite 게임 제작]
+### 3. [Snake Bite 게임 제작]  
+
+-----------------------------------
