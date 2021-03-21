@@ -55,7 +55,7 @@ C# 데스크톱 앱 개발 학습 리포지토리
 -----------------------------------
 
 ## WPF(Windows Presentation Foundation) Application 
-### 1. [아날로그 시계 모듈] 
+### 1. [아날로그 시계 모듈](https://github.com/BlancBunny/StudyDesktopApp/tree/main/WPFApp/WpfExecutiveBank/AnalogClockApp)
 ![아날로그 시계](https://user-images.githubusercontent.com/77951828/111722158-9920a680-88a4-11eb-9cc5-23d5f6df6e2d.png)
 
 -----------------------------------
@@ -63,9 +63,12 @@ C# 데스크톱 앱 개발 학습 리포지토리
 ### 2. [몬테카를로 시뮬레이션]
 [MonteCarlo Method](https://ko.wikipedia.org/wiki/%EB%AA%AC%ED%85%8C%EC%B9%B4%EB%A5%BC%EB%A1%9C_%EB%B0%A9%EB%B2%95) : 난수를 이용하여 함수의 값을 확률적으로 계산하는 알고리즘  
  WPF로 그린 정사각형 안에 꼭 맞는 원을 그린 후  
- 난수 좌표에 점을 찍어 원주율 Pi의 근사값을 구하는 프로그램   
- ![n=1561](https://user-images.githubusercontent.com/77951828/111722699-b3a74f80-88a5-11eb-972b-92a6a9a75ce5.png)  
+ 난수 좌표에 점을 찍어 원주율 Pi의 근사값을 구하는 프로그램
+1) n = 1561  
+![n=1561](https://user-images.githubusercontent.com/77951828/111722699-b3a74f80-88a5-11eb-972b-92a6a9a75ce5.png)  
+2) n = 4207  
 ![n=4207](https://user-images.githubusercontent.com/77951828/111722750-cd489700-88a5-11eb-9408-b07d3ac6fb84.png)  
+3) n = 12000
 ![n=12000](https://user-images.githubusercontent.com/77951828/111722943-20bae500-88a6-11eb-8878-21b7b3d9546f.png)  
 
 -----------------------------------
