@@ -1,4 +1,4 @@
-﻿using BusinessLogic;
+﻿using WpfPracticeApp.BusinessLogic;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,6 +21,7 @@ namespace WpfPracticeApp
     /// </summary>
     public partial class Products : Page
     {
+        private ProductsFactory factory;
         public Products()
         {
             InitializeComponent();
@@ -28,7 +29,8 @@ namespace WpfPracticeApp
 
         private void Page_Initialized(object sender, EventArgs e)
         {
-            var cars = new List<Car>();
+            #region comment
+            /*  var cars = new List<Car>();
             for (int i = 0; i < 10; i++)
             {
                 byte red = (byte)(i % 3 == 0 ? 255 : (i * 50) % 255);
@@ -37,7 +39,15 @@ namespace WpfPracticeApp
                 cars.Add(new Car() { Speed = i * 10, 
                     MainColor = Color.FromRgb(red, green, blue) });
             }
-            this.DataContext = cars;
+            this.DataContext = cars;*/
+            #endregion
+            factory = new ProductsFactory();
+            grdProducts.ItemsSource = factory.GetAllProducts();
+        }
+
+        private void txtSearch_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            grdProducts.ItemsSource = factory.FindProducts(txtSearch.Text);
         }
     }
 }

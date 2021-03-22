@@ -5,12 +5,33 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Media;
 
-namespace BusinessLogic
+namespace WpfPracticeApp.BusinessLogic
 {
-    class Car
+    public class Car : Notifier
     {
-        public double Speed { get; set; }
-        public Color MainColor { get; set; }
+        private double speed;
+        private Color mainColor;
+
+        public double Speed {
+            get { return speed; }
+            set 
+            {
+                if (value > 350) speed = 350;
+                else speed = value;
+                OnPropertyChanged("Speed"); // 속성 값 변경을 알려줌
+            }
+        }  
+
+        
+        public Color MainColor {
+            get { return mainColor; }
+            set 
+            {
+                mainColor = value;
+                OnPropertyChanged("MainColor");
+            } 
+        }
+
         public Human Driver { get; set; }
     }
 

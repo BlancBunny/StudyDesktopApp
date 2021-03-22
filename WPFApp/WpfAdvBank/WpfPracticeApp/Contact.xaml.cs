@@ -1,4 +1,4 @@
-﻿using BusinessLogic;
+﻿using WpfPracticeApp.BusinessLogic;
 using System;
 using System.Collections.Generic;
 using System.Linq;

@@ -6,7 +6,11 @@
       xmlns:local="clr-namespace:WpfPracticeApp"
       mc:Ignorable="d"
       Title="MainMenu" Height="400" Width="600">
-
+    <Page.Resources>
+        <ResourceDictionary>
+            
+        </ResourceDictionary>
+    </Page.Resources>
     <Grid Margin="10" Background="whitesmoke">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="1*"/>
@@ -19,8 +23,31 @@
             <RowDefinition Height="3*"/>
         </Grid.RowDefinitions>
         <Button x:Name="btnProducts" Grid.Column="0" Grid.Row="1" Content="Products" Margin="10" Click="btnProducts_Click"/>
-        <Button x:Name="btnLiveSupport" Grid.Column="1" Grid.Row="1" Content="Live Support" Margin="10" Click="btnLiveSupport_Click"/>
-        <Button x:Name="btnEmailSupport" Grid.Column="2" Grid.Row="1" Content="Email Support" Margin="10" Click="btnEmailSupport_Click"/>
-        <Label Content="Adventure Works" Grid.Column="0" Grid.Row="2" FontSize="36" Grid.ColumnSpan="3" HorizontalAlignment="Center"/>
+        <Button x:Name="btnLiveSupport" 
+                Grid.Column="1" Grid.Row="1" 
+                Content="Live Support" Margin="10" 
+                Click="btnLiveSupport_Click"/>
+        <Button x:Name="btnEmailSupport" Grid.Column="2" Grid.Row="1" 
+                Content="Email Support" FontSize="20" 
+                Margin="5" Click="btnEmailSupport_Click">
+            <Button.Template>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Grid>
+                        <Rectangle Fill="blueviolet" Stroke="DarkBlue" 
+                                   StrokeThickness="3"
+                                   RadiusX="14" RadiusY="14"/>
+                        <Label Content="{TemplateBinding Content}"
+                               Foreground="white"
+                               HorizontalContentAlignment="Center"
+                               VerticalContentAlignment="Center"/>
+                    </Grid>
+                </ControlTemplate>
+
+            </Button.Template>
+        </Button>
+
+        <Label Grid.Column="0" Grid.Row="2" FontSize="36" Grid.ColumnSpan="3" HorizontalAlignment="Center" Content="Adventure Works">
+            
+        </Label>
     </Grid>
 </Page>
