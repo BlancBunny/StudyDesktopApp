@@ -46,7 +46,11 @@
 
     <DockPanel>
         <Grid DockPanel.Dock="Top">
-            <Menu IsMainMenu="True">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="97*"/>
+                <ColumnDefinition Width="101*"/>
+            </Grid.ColumnDefinitions>
+            <Menu IsMainMenu="True" Grid.ColumnSpan="2">
                 <MenuItem Header="파일(_F)">
                     <MenuItem Header="열기(_O)">
                         <MenuItem.Icon>

@@ -1,4 +1,4 @@
-﻿using MahApps.Metro.Controls;
+﻿using BusinessLogic;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,13 +18,20 @@ using System.Windows.Shapes;
 namespace WpfPracticeApp
 {
     /// <summary>
-    /// MainWindow.xaml에 대한 상호 작용 논리
+    /// Contact.xaml에 대한 상호 작용 논리
     /// </summary>
-    public partial class MainWindow : MetroWindow
+    public partial class Contact : Page
     {
-        public MainWindow()
+        public Contact()
         {
             InitializeComponent();
+        }
+
+        private void Page_Initialized(object sender, EventArgs e)
+        {
+            Car car = new Car();
+            car.Speed = 10;
+            car.MainColor = Colors.Red;
         }
     }
 }

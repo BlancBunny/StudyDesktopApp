@@ -1,0 +1,36 @@
+﻿<Page x:Class="WpfPracticeApp.Contact"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      
+      xmlns:local="clr-namespace:WpfPracticeApp"
+      mc:Ignorable="d" 
+      d:DesignHeight="400" d:DesignWidth="600"
+      Title="Contact" Initialized="Page_Initialized">
+
+    <Grid Margin="10" Background="WhiteSmoke">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="6*"/>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="5*"/>
+        </Grid.ColumnDefinitions>
+        <Label Content="Sender" Grid.Column="0" Grid.Row="0" FontSize="18" HorizontalAlignment="Right" VerticalAlignment="center"/>
+        <Label Content="Message" Grid.Column="0" Grid.Row="1" FontSize="18" HorizontalAlignment="Right" Margin="0,10"/>
+        <TextBox x:Name="txtSender" Grid.Column="1" Grid.Row="0" Margin="10" FontSize="14"/>
+        <RichTextBox x:Name="txtMessage" Grid.Column="1" Grid.Row="1" Margin="10" FontSize="14"/>
+        <Label Grid.Column="0" Grid.Row="2">
+            
+        </Label>
+        
+        <StackPanel Grid.Column="1" Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Right">
+            <Button x:Name="btnSend" Content="Send" Margin="5" Width="100"/>
+            <Button x:Name="btnCancel" Content="Cancel" Margin="5" Width="100"/>
+        </StackPanel>
+        
+    </Grid>
+</Page>
