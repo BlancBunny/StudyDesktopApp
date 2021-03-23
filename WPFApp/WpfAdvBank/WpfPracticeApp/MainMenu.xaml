@@ -5,10 +5,10 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:WpfPracticeApp"
       mc:Ignorable="d"
-      Title="MainMenu" Height="400" Width="600">
+      Title="MainMenu">
     <Page.Resources>
         <ResourceDictionary>
-            
+
         </ResourceDictionary>
     </Page.Resources>
     <Grid Margin="10" Background="whitesmoke">
@@ -47,7 +47,7 @@
         </Button>
 
         <Label Grid.Column="0" Grid.Row="2" FontSize="36" Grid.ColumnSpan="3" HorizontalAlignment="Center" Content="Adventure Works">
-            
+
         </Label>
     </Grid>
 </Page>

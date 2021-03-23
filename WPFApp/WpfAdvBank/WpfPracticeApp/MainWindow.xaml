@@ -9,7 +9,7 @@
         xmlns:bl="clr-namespace:WpfPracticeApp"
         xmlns:local="clr-namespace:WpfPracticeApp"
         mc:Ignorable="d"
-        Title="MainWindow" Height="400" Width="600">
+        Title="MainWindow" Height="400" Width="600" ResizeMode="NoResize">
     <Grid>
         <Frame Name="MainFrame" NavigationUIVisibility="Visible" Source="/WpfPracticeApp;component/MainMenu.xaml"></Frame>
     </Grid>

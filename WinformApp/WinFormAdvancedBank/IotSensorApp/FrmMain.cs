@@ -21,7 +21,7 @@ namespace IotSensorApp
         private Random r = new Random();
         private bool simulationFlag;
         SerialPort sPort;
-        private int value = 500;
+        private int value = 0;
         private string connString = $"Data Source=127.0.0.1;Initial Catalog=IoTData;Persist Security Info=True;User ID=sa;Password=mssql_p@ssw0rd!";
 
 
@@ -110,11 +110,22 @@ namespace IotSensorApp
         {
             // TODO 실제 작업 시 작성
         }
+
+        private long timespan = 0;
+        private int randMaxVal = 0;
         private void T_Tick(object sender, EventArgs e)
         {
             ChartShape();
-            int rValue = r.Next(-20, 20);
-            value += rValue;
+            timespan += 1;
+            var temp = timespan % 30;
+
+            if (temp < 20)
+            {
+                randMaxVal = 300;
+            }
+            else randMaxVal = 600;
+            
+            value = r.Next(randMaxVal - 40, randMaxVal);
             ShowValue(value.ToString());
         }
 
@@ -157,6 +168,7 @@ namespace IotSensorApp
 
             DBInsert(data);
         }
+
         private void DBInsert(SensorData data)
         {
             string query = $"INSERT INTO PhotoResisterTbl " +
