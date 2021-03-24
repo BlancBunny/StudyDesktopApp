@@ -43,91 +43,102 @@ namespace SensorMonitoringApp
     /// </summary>
     public partial class MainWindow : MetroWindow
     {
-        private readonly NLog.Logger logger = NLog.LogManager.GetCurrentClassLogger();
+        #region Global Variable
+            private readonly NLog.Logger logger = NLog.LogManager.GetCurrentClassLogger();
 
-        public DispatcherTimer CustomTimer { get; set; }
-        public ChartValues<int> ChartValues { get; set; }
-        public int SensorValue { get; set; }
-        string strConn = "Data Source=210.119.12.96;Initial Catalog=IoTData;" +
-                              "Persist Security Info=True;User ID=sa;Password=mssql_p@ssw0rd!;";
-        
+            public DispatcherTimer CustomTimer { get; set; }
+            public ChartValues<int> ChartValues { get; set; }
+            public int SensorValue { get; set; }
+            string strConn = "Data Source=210.119.12.96;Initial Catalog=IoTData;" +
+                                  "Persist Security Info=True;User ID=sa;Password=mssql_p@ssw0rd!;";
+        #endregion
+
         public MainWindow()
         {
             InitializeComponent();
         }
-        
-        private void MetroWindow_Initialized(object sender, EventArgs e)
-        {
-            //    var x = Enumerable.Range(0, 1001).Select(i => i / 10.0).ToArray();
-            //    var y = x.Select(v => Math.Abs(v) < 1e-10 ? 1 : Math.Sin(v) / v).ToArray();
-            //    chtLine.Plot(x, y);
-            
-            chtHistory.DataContext = ChartValues;
 
-            CustomTimer = new DispatcherTimer();
-            CustomTimer.Interval = TimeSpan.FromSeconds(1);
-            CustomTimer.Tick += CustomTimer_Tick;
-        }
+        #region Event Handler
+            private void MetroWindow_Initialized(object sender, EventArgs e)
+            {
+                //    var x = Enumerable.Range(0, 1001).Select(i => i / 10.0).ToArray();
+                //    var y = x.Select(v => Math.Abs(v) < 1e-10 ? 1 : Math.Sin(v) / v).ToArray();
+                //    chtLine.Plot(x, y);
 
-        private void CustomTimer_Tick(object sender, EventArgs e)
-        {
-            // SensorValue = new Random().Next(0, 1023);
-            chtSensorGauge.DataContext = GetRealTimeSensor().Value;
-        }
+                chtHistory.DataContext = ChartValues;
 
-        private void mnuLoad_Click(object sender, RoutedEventArgs e)
-        {
-            // ChartValues = GetHistorySensors();
-            chtHistory.ItemsSource = GetHistorySensors();
-        }
+                CustomTimer = new DispatcherTimer();
+                CustomTimer.Interval = TimeSpan.FromSeconds(1);
+                CustomTimer.Tick += CustomTimer_Tick;
+            }
+            private void CustomTimer_Tick(object sender, EventArgs e)
+            {
+                // SensorValue = new Random().Next(0, 1023);
+                chtSensorGauge.DataContext = GetRealTimeSensor().Value;
+            }
+            private void mnuBegin_Click(object sender, RoutedEventArgs e)
+            {
+                CustomTimer.Start();
+            }
+            private void mnuStop_Click(object sender, RoutedEventArgs e)
+            {
+                CustomTimer.Stop();
+            }
+            private void mnuLoad_Click(object sender, RoutedEventArgs e)
+            {
+                // ChartValues = GetHistorySensors(); -> LiveChart
+                chtHistory.ItemsSource = GetHistorySensors();
+            }
+            private void mnuExit_Click(object sender, RoutedEventArgs e)
+            {
+                // Environment.Exit(0);
+                Application.Current.Shutdown(0);
+            }
+        #endregion 
 
+
+        /// <summary>
+        /// 실시간 센서값 모니터링 
+        /// </summary>
+        /// <returns></returns>
         private SensorData GetRealTimeSensor()
         {
             SensorData result = null;
-                try
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(strConn))
                 {
-                    using (SqlConnection conn = new SqlConnection(strConn))
-                    {
-                        if (conn.State == ConnectionState.Closed) conn.Open();
+                    if (conn.State == ConnectionState.Closed) conn.Open();
 
-                        var query = @"SELECT TOP 1 [idx]
+                    var query = @"SELECT TOP 1 [idx]
                                                   ,[currTime]
                                                   ,[value]
                                                   ,[simFlag]
                                               FROM [dbo].[PhotoResisterTbl]
                                               ORDER BY idx DESC; ";
-                        SqlCommand cmd = new SqlCommand(query, conn);
-                        var temp = cmd.ExecuteReader();
-                        if (temp.Read())
-                        {
-                            result = new SensorData(Convert.ToInt32(temp["idx"]),
-                                                    Convert.ToDateTime(temp["currTime"]),
-                                                    Convert.ToInt32(temp["value"]),
-                                                    Convert.ToBoolean(temp["simFlag"]));
-                        }
+                    SqlCommand cmd = new SqlCommand(query, conn);
+                    var temp = cmd.ExecuteReader();
+                    if (temp.Read())
+                    {
+                        result = new SensorData(Convert.ToInt32(temp["idx"]),
+                                                Convert.ToDateTime(temp["currTime"]),
+                                                Convert.ToInt32(temp["value"]),
+                                                Convert.ToBoolean(temp["simFlag"]));
                     }
                 }
+            }
 
-                catch (Exception ex)
-                {
-                    Debug.WriteLine($"예외발생 : {ex.Message}");
-                }
+            catch (Exception ex)
+            {
+                Debug.WriteLine($"예외발생 : {ex.Message}");
+            }
             return result;
         }
-            
-        private void mnuBegin_Click(object sender, RoutedEventArgs e)
-        {
-            CustomTimer.Start();
-        }
-        private void mnuStop_Click(object sender, RoutedEventArgs e)
-        {
-            CustomTimer.Stop();
-        }
-        private void mnuExit_Click(object sender, RoutedEventArgs e)
-        {
-            Environment.Exit(0);
-        }
 
+        /// <summary>
+        /// 저장된 센서값 히스토리 불러오기 
+        /// </summary>
+        /// <returns></returns>
         private List<DataPoint> GetHistorySensors()
         {
             List<DataPoint> result = new List<DataPoint>();

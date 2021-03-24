@@ -39,14 +39,13 @@
                 <MenuItem.Icon>
                     <iconPacks:PackIconBoxIcons Kind="RegularLineChart"/>
                 </MenuItem.Icon>
-                
                 <MenuItem x:Name="mnuLoad" Header="불러오기(_L)" Click="mnuLoad_Click">
                     <MenuItem.Icon>
                         <iconPacks:PackIconBoxIcons Kind="RegularLineChart"/>
                     </MenuItem.Icon>
                 </MenuItem>
             </MenuItem>
-        </Menu>
+        </Menu> <!--상단 메뉴 바-->
         <Grid DockPanel.Dock="Bottom">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="1*"/>
@@ -65,15 +64,16 @@
                                   TicksForeground="black" TicksStep="100"
                                   Foreground="white" 
                                   FontWeight="Bold" FontSize="16"
-                                  NeedleFill="black">
+                                  NeedleFill="black"
+                                  SectionsInnerRadius="0.85">
+                                  
                     <lvc:AngularGauge.Sections>
                         <lvc:AngularSection FromValue="0" ToValue="700" Fill="Beige"/>
                         <lvc:AngularSection FromValue="700" ToValue="1023" Fill="DarkRed"/>
                     </lvc:AngularGauge.Sections>
                 </lvc:AngularGauge>
-            </Grid>
-
-            <Grid Grid.Column="1" Margin="20">
+            </Grid> <!--RealTime Monitoring-->
+            <Grid Grid.Column="1" Margin="20"> 
                 <Grid.RowDefinitions>
                     <RowDefinition Height="1*"/>
                     <RowDefinition Height="9*"/>
@@ -99,8 +99,7 @@
                                         RenderOptions.EdgeMode="Unspecified"/>
                     </oxy:Plot.Series>
                 </oxy:Plot>
-                
-            </Grid>
+            </Grid> <!--Sensor Monitoring History-->
         </Grid>
     </DockPanel>
     
