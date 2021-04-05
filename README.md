@@ -77,7 +77,7 @@ C# 데스크톱 앱 개발 학습 리포지토리
 
 -----------------------------------
  
-### 3. [Snake Bite 게임 제작]  
+### 3. [Snake Bite 게임 제작](https://github.com/BlancBunny/StudyDesktopApp/tree/main/WPFApp/WpfExecutiveBank/SnakeBiteGame)
 ![Main Page](https://user-images.githubusercontent.com/77951828/111925717-556cad80-8aed-11eb-8d2d-593b3f6f8533.png)
 ![Game Window](https://user-images.githubusercontent.com/77951828/111925867-d6c44000-8aed-11eb-8d9f-f3de37235f68.png)
 ![Game Win](https://user-images.githubusercontent.com/77951828/111926001-64079480-8aee-11eb-9941-a19adbdb18cd.png)
